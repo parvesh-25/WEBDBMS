@@ -242,3 +242,139 @@ console.log(identitas["addres"] ["street"])
 // membuat tabel
 console.table(identitas)
 console.table(gtw)
+
+const mobil = "peugeot"
+const motor = "Ducati"
+
+console.log(`saya punya mobil ${mobil} dan motor ${motor}`)
+//loosely typed languange
+const a = 1, b = 2, c = 3
+
+// shorthand named property
+let [a,b,c]=[true,4,5]
+
+// ternarary operator (cara singkat nulis kondisi)
+// biasanya:
+// let a = 9
+// if(a<10){
+//     console.log("nilai a kurang dari 10")
+// }else{
+//     console.log("Nilai a lebih dari 10")
+// }
+
+let a = 9
+a <=10
+? console.log("nilai kurang dari 10")
+: console.log("nilai lebih dari 10")
+
+/**
+ * function 
+ * merupakan sebuah block code untuk membungkus sebuah proses penulisan kode agar tidak diulang kembali
+ */
+//terdapat tiga cara penulisan function, fungsi nya sama aja
+
+//function biasa
+
+function name(params){
+    console.log('saya belajar javaScript')
+}
+name()
+// param di function bisa di isi brp pun
+function test(param1, param2) {
+    console.log("saya makan","saya ngaji")
+}
+test()
+
+// anonymous function
+const anon = function(param){
+    console.log(param)
+}
+anon("saya belajar java script")
+
+//arrow function
+let third = () =>{
+    console.log("ini adalah arrow function")
+}
+third("")
+//bisa juga seperti ini:
+// let third = (param1) =>{
+//     console.log(param1)
+// }
+// third(param1)
+
+const satu = (parameter) =>{
+    let a = parameter
+    console.log(a)
+}
+satu()
+
+const dua = function(num1, num2){
+    let a = num1, b = num2
+    console.log(a+b)
+}
+dua(2,4)
+
+/**
+ * High Order Function
+ * Fungsi yang menerima argumen berupa fungsi lain serta return bisa berupa fungsi juga.
+ */
+
+// normal function
+// function genap(number){
+//     return number % 2 == 0
+// }
+// function print(number) {
+//     let isTrue = genap(num) // jadi function genap dipanggil di variabel isTrue
+//     if(isTrue){
+//         console.log(`${number} adalah bilangan genap`)
+//     }else{
+//         console.log(`${number} adalah bilangan ganjil`)
+//     }
+// }
+// print(10)
+
+// High Order Function
+// function kecepatan(mobil) {
+//     return mobil >= 100 // jika mobil lebih dari 100 maka punya saya
+// }
+
+// function warna(mobil) {
+//     return mobil == "merah" // jika mobil warna merah maka mobil punya saya 
+// }
+
+// function kendaraan(mobil, callback) {
+//     let a = callback(mobil) // bisa digunakan untuk memanggil dua function
+//     if(a){
+//         console.log(`mobil dengan ${mobil} adalah mobil saya`)
+//     }else{
+//         console.log(`mobil dengan ${mobil} bukan mobil saya`)
+//     }
+// }
+// kendaraan(120, kecepatan) // callback diisi oleh 120 , dan mobil diisi dengan function kecepatan
+
+//
+/**
+ * terdapat 2 function
+ * tahun <= 2001 gaperlu bayar pajak
+ * else = bayar pajak
+ * 
+ * cc >= 150 harus bayar pajak
+ */
+
+function tahun(nilai) {
+    return nilai >= 2001 // jika mobil lebih dari 100 maka punya saya
+}
+
+function cc(nilai) {
+     return nilai >= 150 // jika mobil warna merah maka mobil punya saya 
+}
+
+function kendaraan(nilai, callback) {
+    let a = callback(nilai) // bisa digunakan untuk memanggil dua function
+    if(a){
+        console.log(`harus bayar pajak`)
+    }else{
+        console.log(`Tidak harus bayarb pajak`)
+    }
+}
+kendaraan(2002,tahun) 
